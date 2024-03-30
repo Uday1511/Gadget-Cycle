@@ -53,34 +53,34 @@ function AdminShop() {
         setProductName(e.target.value);
     }
 
-    const handlePrimaryImageChange = (image) => {
-        console.log(image);
-        setPrimaryImage(image);
+    const handlePrimaryImageChange = (imageUrl) => {
+        console.log(imageUrl);
+        setPrimaryImage(imageUrl);
     }
 
-    const handleSecondImageOneChange = (image) => {
-        console.log(image);
-        setSecondaryImage1(image);
+    const handleSecondImageOneChange = (imageUrl) => {
+        console.log(imageUrl);
+        setSecondaryImage1(imageUrl);
     }
 
-    const handleSecondImageTwoChange = (image) => {
-        console.log(image);
-        setSecondaryImage2(image);
+    const handleSecondImageTwoChange = (imageUrl) => {
+        console.log(imageUrl);
+        setSecondaryImage2(imageUrl);
     }
 
-    const handleSecondImageThreeChange = (image) => {
-        console.log(image);
-        setSecondaryImage3(image);
+    const handleSecondImageThreeChange = (imageUrl) => {
+        console.log(imageUrl);
+        setSecondaryImage3(imageUrl);
     }
 
-    const handleSecondImageFourChange = (image) => {
-        console.log(image);
-        setSecondaryImage4(image);
+    const handleSecondImageFourChange = (imageUrl) => {
+        console.log(imageUrl);
+        setSecondaryImage4(imageUrl);
     }
 
-    const handleSecondImageFiveChange = (image) => {
-        console.log(image);
-        setSecondaryImage5(image);
+    const handleSecondImageFiveChange = (imageUrl) => {
+        console.log(imageUrl);
+        setSecondaryImage5(imageUrl);
     }
 
     const handleGadgetInfoChange = (index, event, field) => {
@@ -115,71 +115,12 @@ function AdminShop() {
     const onPublish = async () => {
         const newData = {
             name: productName,
-            primaryImage: "none",
-            secondaryImage1: "none",
-            secondaryImage2: "none",
-            secondaryImage3: "none",
-            secondaryImage4: "none",
-            secondaryImage5: "none",
             gadget_info: gadgetInfo,
             technical_details: technicalDetails,
             category: category
         }
 
-        if (primaryImage) {
-            try {
-                const uploadedImageUrl = await uploadImage(primaryImage, productId);
-                newData.primaryImage = uploadedImageUrl;
-                console.log(uploadedImageUrl);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        if (secondaryImage1) {
-            try {
-                const uploadedImageUrl = await uploadImage(secondaryImage1, productId);
-                newData.secondaryImage1 = uploadedImageUrl;
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        if (secondaryImage2) {
-            try {
-                const uploadedImageUrl = await uploadImage(secondaryImage2, productId);
-                newData.secondaryImage2 = uploadedImageUrl;
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        if (secondaryImage3) {
-            try {
-                const uploadedImageUrl = await uploadImage(secondaryImage3, productId);
-                newData.secondaryImage3 = uploadedImageUrl;
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        if (secondaryImage4) {
-            try {
-                const uploadedImageUrl = await uploadImage(secondaryImage4, productId);
-                newData.secondaryImage4 = uploadedImageUrl;
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        if (secondaryImage5) {
-            try {
-                const uploadedImageUrl = await uploadImage(secondaryImage5, productId);
-                newData.secondaryImage5 = uploadedImageUrl;
-            } catch (error) {
-                console.log(error);
-            }
-        }
+        
 
         updateDocument('products', productId, newData);
     }

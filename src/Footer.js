@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-section company-info">
           <h5>Company</h5>
           <ul>
-            <li><a href="#">About</a></li>
+            <li><a href="/aboutus">About</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">Blog</a></li>
           </ul>
